@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n6e-9Z-jE8">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="D4T-Is-9Qj">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -30,13 +30,80 @@
                             <constraint firstItem="D4T-Is-9Qj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aT8-df-Jnd"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Neh-LT-O98"/>
                     <connections>
                         <outlet property="tableView" destination="D4T-Is-9Qj" id="XcP-vk-NzD"/>
+                        <segue destination="CNu-uz-Pfn" kind="show" identifier="toDetailsVC" id="bkt-ZV-bcR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="4"/>
+            <point key="canvasLocation" x="1063.3587786259541" y="3.5211267605633805"/>
+        </scene>
+        <!--DetailsVC-->
+        <scene sceneID="y6n-gU-ZEJ">
+            <objects>
+                <viewController id="CNu-uz-Pfn" customClass="DetailsVC" customModule="LandmarkBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HPz-pf-9x5">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Landmark Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srn-ob-q4b">
+                                <rect key="frame" x="101" y="158" width="190" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="KYh-wq-xeO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2YB-pj-sZL">
+                                <rect key="frame" x="45" y="234" width="321" height="215"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="321" id="0u7-tv-v0W"/>
+                                    <constraint firstAttribute="height" constant="215" id="2vv-hV-X1x"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LwK-PA-FBU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="srn-ob-q4b" firstAttribute="leading" secondItem="LwK-PA-FBU" secondAttribute="leading" constant="101" id="7AN-dr-bqz"/>
+                            <constraint firstItem="LwK-PA-FBU" firstAttribute="bottom" secondItem="2YB-pj-sZL" secondAttribute="bottom" constant="369" id="CAu-9x-oZh"/>
+                            <constraint firstItem="2YB-pj-sZL" firstAttribute="top" secondItem="srn-ob-q4b" secondAttribute="bottom" constant="26" id="I0L-5w-w5s"/>
+                            <constraint firstItem="srn-ob-q4b" firstAttribute="centerX" secondItem="HPz-pf-9x5" secondAttribute="centerX" id="UK8-H6-s5K"/>
+                            <constraint firstItem="2YB-pj-sZL" firstAttribute="leading" secondItem="LwK-PA-FBU" secondAttribute="leading" constant="45" id="YCV-sK-HfU"/>
+                            <constraint firstItem="LwK-PA-FBU" firstAttribute="trailing" secondItem="2YB-pj-sZL" secondAttribute="trailing" constant="27" id="dpm-N4-Ukb"/>
+                            <constraint firstItem="srn-ob-q4b" firstAttribute="top" secondItem="LwK-PA-FBU" secondAttribute="top" constant="55" id="scq-J6-Gh6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="d8V-va-Nvm"/>
+                    <connections>
+                        <outlet property="imageView" destination="2YB-pj-sZL" id="FYp-pY-4MK"/>
+                        <outlet property="landmarkLabel" destination="srn-ob-q4b" id="Ofx-O2-um9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4NA-C7-WhG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1895.4198473282443" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="s6X-QJ-1Vl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n6e-9Z-jE8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a5f-Dm-67A">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="zjo-Ts-VkU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cje-lb-y7u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.64122137404578" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
